@@ -3,7 +3,7 @@
 ## Introduction:
 * 👋 Hey everyone! Welcome back to my GitHub.
 * 🎥 This repo shows you how to set up Grafana with Docker Compose and integrate it with an Amazon EKS Cluster for monitoring.
-* 📊 Grafana is a powerful tool for data visualization, and with this guide, you'll be able to monitor your Kubernetes clusters with ease.
+* 📊 Grafana is a powerful tool for data visualization. With this guide, you'll easily monitor your Kubernetes clusters.
 
 ## Prerequisites:
 * 💻 A computer with Docker and Docker Compose installed.
@@ -37,7 +37,7 @@
 **3. Launch Grafana:**
    * In your terminal, navigate to the directory with your `docker-compose.yml` file.
    * Run `docker-compose up -d 🐳` to start Grafana.
-   * Grafana will be available on `http://localhost:3000`, with the default credentials `admin/admin`.
+   * Grafana will be available on `http://localhost:3000`, with the default admin/admin credentials.
 
 **4. Create an EKS Cluster using AWS CLI:**
    * Open your terminal and ensure AWS CLI is configured with appropriate permissions.
@@ -48,6 +48,8 @@
      ```
    * Use the command below to create an EKS Cluster:
      ```bash
+      aws ec2 create-security-group --group-name EKSClusterSecurityGroup --description "Security group for EKS cluster" --vpc-id <YOUR_VPC_ID>
+
      aws eks create-cluster --name my-eks-cluster --role-arn arn:aws:iam::<YOUR_ACCOUNT_ID>:role/eksClusterRole --resources-vpc-config subnetIds=<SUBNET_ID_1>,<SUBNET_ID_2>,securityGroupIds=<SECURITY_GROUP_ID>
      ```
 
