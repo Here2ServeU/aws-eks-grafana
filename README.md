@@ -48,7 +48,7 @@
      ```
    * Use the command below to create an EKS Cluster:
      ```bash
-      aws ec2 create-security-group --group-name EKSClusterSecurityGroup --description "Security group for EKS cluster" --vpc-id <YOUR_VPC_ID>
+     aws ec2 create-security-group --group-name EKSClusterSecurityGroup --description "Security group for EKS cluster" --vpc-id <YOUR_VPC_ID>
 
      aws eks create-cluster --name my-eks-cluster --role-arn arn:aws:iam::<YOUR_ACCOUNT_ID>:role/eksClusterRole --resources-vpc-config subnetIds=<SUBNET_ID_1>,<SUBNET_ID_2>,securityGroupIds=<SECURITY_GROUP_ID>
      ```
