@@ -82,6 +82,16 @@
      helm repo update
      helm install prometheus prometheus-community/prometheus
      ```
+   * Check the namespaces
+     ```bash
+     kubectl get pods --namespace default
+     ```
+   * Forward the port number to the desired port 9090
+     ```bash
+     kubectl --namespace default port-forward prometheus-server-897654gdsa78 9090:9090
+     ```
+  * Open Prometheus at `http://localhost:9090`
+  
    * Open Grafana at `http://localhost:3000` and log in.
    * Go to **Configuration > Data Sources** in Grafana, and add **Prometheus** as a data source using the Prometheus endpoint.
    * Import Kubernetes monitoring dashboards (ID **315** for Kubernetes cluster monitoring) to view EKS metrics.
